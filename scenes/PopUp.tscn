@@ -1,0 +1,14 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Label" type="Label" parent="."]
+margin_left = 498.0
+margin_top = 259.0
+margin_right = 675.0
+margin_bottom = 369.0
+text = "You Win"
+uppercase = true
+percent_visible = -0.166667
