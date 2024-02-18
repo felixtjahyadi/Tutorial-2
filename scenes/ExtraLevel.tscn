@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/GreenShip.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/SnowPlatform.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 77, 48 )
+
+[node name="ExtraLevel" type="Node"]
+
+[node name="Platform" type="Node2D" parent="."]
+
+[node name="SnowPlatform" parent="Platform" instance=ExtResource( 2 )]
+position = Vector2( 917, 565 )
+
+[node name="SnowPlatform2" parent="Platform" instance=ExtResource( 2 )]
+position = Vector2( 987, 565 )
+
+[node name="GreenShip" parent="." instance=ExtResource( 1 )]
+position = Vector2( 957, 347 )
+
+[node name="ObjectiveArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectiveArea"]
+position = Vector2( 947, 50 )
+shape = SubResource( 1 )
