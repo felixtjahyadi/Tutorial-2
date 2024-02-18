@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 46, 34.125 )
 
-[node name="ExtraShip" type="RigidBody2D"]
+[node name="GreenShip" type="RigidBody2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 3.8147e-06, 7.62939e-06 )
