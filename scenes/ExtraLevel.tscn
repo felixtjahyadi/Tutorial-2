@@ -1,14 +1,25 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/GreenShip.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/SnowPlatform.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/SnowPlatform.gd" type="Script" id=3]
 [ext_resource path="res://scenes/ObjectiveArea2.gd" type="Script" id=4]
+[ext_resource path="res://scenes/ResetArea2.gd" type="Script" id=5]
+[ext_resource path="res://assets/space.jpg" type="Texture" id=6]
+[ext_resource path="res://scenes/Obstacle.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 77, 48 )
+extents = Vector2( 77, 32 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 511.75, 37 )
 
 [node name="ExtraLevel" type="Node"]
+
+[node name="Space" type="Sprite" parent="."]
+scale = Vector2( 0.179528, 0.186335 )
+texture = ExtResource( 6 )
+centered = false
 
 [node name="Platform" type="Node2D" parent="."]
 script = ExtResource( 3 )
@@ -26,7 +37,18 @@ position = Vector2( 957, 347 )
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectiveArea"]
-position = Vector2( 947, 50 )
+position = Vector2( 947, 34 )
 shape = SubResource( 1 )
 
+[node name="ResetArea" type="Area2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ResetArea"]
+position = Vector2( 513.25, 639 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D" parent="." instance=ExtResource( 7 )]
+position = Vector2( 953, 222 )
+
 [connection signal="body_entered" from="ObjectiveArea" to="ObjectiveArea" method="_on_ObjectiveArea_body_entered"]
+[connection signal="body_entered" from="ResetArea" to="ResetArea" method="_on_ResetArea_body_entered"]

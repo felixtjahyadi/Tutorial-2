@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/StonePlatform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/BlueShip.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/PlatformBlue.gd" type="Script" id=3]
 [ext_resource path="res://scenes/ObjectiveArea.gd" type="Script" id=4]
 [ext_resource path="res://scenes/ResetArea.gd" type="Script" id=5]
+[ext_resource path="res://assets/space.jpg" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 69.375, 39.5 )
@@ -13,6 +14,11 @@ extents = Vector2( 69.375, 39.5 )
 extents = Vector2( 511.75, 37 )
 
 [node name="MainLevel" type="Node"]
+
+[node name="Space" type="Sprite" parent="."]
+scale = Vector2( 0.179528, 0.186335 )
+texture = ExtResource( 6 )
+centered = false
 
 [node name="PlatformBlue" type="Node2D" parent="."]
 position = Vector2( 35, 565 )
