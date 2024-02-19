@@ -19,3 +19,6 @@ func _process(delta):
 		
 	if Input.is_action_pressed("move_right"):
 		move_local_x(speed * delta)
+	
+	if Input.is_action_pressed("r"):
+		get_tree().change_scene("res://scenes/ExtraLevel.tscn")
