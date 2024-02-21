@@ -4,6 +4,8 @@ Name : Felix Tjahyadi
 
 NPM : 2106638614
 
+Godot version : 3.5
+
 ## Latihan: Playtest
 1. Setelah menggerakkkan objek landasan ke atas, hasil log dari Output
 ```
